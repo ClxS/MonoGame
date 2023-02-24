@@ -44,7 +44,7 @@ namespace Microsoft.Xna.Framework.Content
                 return contentManager;
             }
         }
-        
+
         public string AssetName
         {
             get
@@ -62,7 +62,7 @@ namespace Microsoft.Xna.Framework.Content
 
             // Read shared resources
             ReadSharedResources();
-            
+
             return result;
         }
 
@@ -119,7 +119,7 @@ namespace Microsoft.Xna.Framework.Content
             result.M11 = ReadSingle();
             result.M12 = ReadSingle();
             result.M13 = ReadSingle();
-            result.M14 = ReadSingle(); 
+            result.M14 = ReadSingle();
             result.M21 = ReadSingle();
             result.M22 = ReadSingle();
             result.M23 = ReadSingle();
@@ -134,7 +134,7 @@ namespace Microsoft.Xna.Framework.Content
             result.M44 = ReadSingle();
             return result;
         }
-            
+
         private void RecordDisposable<T>(T result)
         {
             var disposable = result as IDisposable;
@@ -154,7 +154,7 @@ namespace Microsoft.Xna.Framework.Content
 
         public T ReadObject<T>(ContentTypeReader typeReader)
         {
-            var result = (T)typeReader.Read(this, default(T));            
+            var result = (T)typeReader.Read(this, default(T));
             RecordDisposable(result);
             return result;
         }
@@ -286,7 +286,7 @@ namespace Microsoft.Xna.Framework.Content
         {
             return base.Read7BitEncodedInt();
         }
-		
+
 		internal BoundingSphere ReadBoundingSphere()
 		{
 			var position = ReadVector3();
